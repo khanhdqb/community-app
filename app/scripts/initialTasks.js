@@ -2,11 +2,11 @@
 (function (mifosX) {
     var defineHeaders = function ($httpProvider, $translateProvider, ResourceFactoryProvider, HttpServiceProvider, $idleProvider, $keepaliveProvider, IDLE_DURATION, WARN_DURATION, KEEPALIVE_INTERVAL) {
         var mainLink = getLocation(window.location.href);
-        var baseApiUrl = "https://demo.mifos.io";
+        var baseApiUrl = "https://demo.fintaz.com";
         var host = "";
         var portNumber = "";
         //accessing from openmf server
-        if (mainLink.hostname.indexOf('mifos.io') >= 0) {
+        if (mainLink.hostname.indexOf('fintaz.com') >= 0) {
             var hostname = window.location.hostname;
             console.log('hostname---' + hostname);
             domains = hostname.split('.');
@@ -21,7 +21,7 @@
                 ResourceFactoryProvider.setTenantIdenetifier(domains[0]);
                 console.log("other than demo server", domains[0]);
             }
-            host = "https://" + mainLink.hostname;
+            host = "https://api.fintaz.com";
             console.log('hostname from mainLink = ', host);
         }
         //accessing from a file system or other servers
